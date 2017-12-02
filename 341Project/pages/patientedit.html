@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <div>ID:   <input type="text" ng-model="fakePatient.id"></div>
+    <div>NAME: <input type="text" ng-model="fakePatient.name"></div>
+    <div>DOB:  <input type="text" ng-model="fakePatient.dob"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script>
+        var app = angular.module('patientEdit', []);
+        app.controller('peCtrl', function ($scope) {
+            $scope.fakePatient = { id: "00001", name: "John Jones", dob: "1/1/1990" };
+        });
+    </script>
+</body>
+</html>

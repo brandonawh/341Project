@@ -1,0 +1,29 @@
+﻿{
+  "all": {
+    "admitted_to": "SELECT * FROM admitted_to",
+    "appointments": "SELECT * FROM appointments",
+    "carecenter": "SELECT * FROM carecenter",
+    "doctors": "SELECT * FROM doctors",
+    "nurses": "SELECT * FROM nurses",
+    "patients": "SELECT * FROM patients",
+    "studies": "SELECT * FROM studies"
+  },
+  "byid": { //when implementing in code, must append the id - EXCEPT FOR APPOINTMENTS AND ADMISSIONS
+    "admitted_to": "SELECT * FROM admitted_to WHERE patient_id = patid, carecenter_id = carid", //use String.replace for search terms
+    "appointments": "SELECT * FROM appointments WHERE patient_id = patid, doctor_id = docid, carecenter_id = carid", //use String.replace for search terms
+    "carecenter": "SELECT * FROM carecenter WHERE carecenter_id = ",
+    "doctors": "SELECT * FROM doctors WHERE doctor_id = ",
+    "nurses": "SELECT * FROM nurses WHERE nurse_id = ",
+    "patients": "SELECT * FROM patients WHERE patient_id = ",
+    "studies": "SELECT * FROM studies WHERE study_id = "
+  },
+  "new": { //use String.replace for search terms
+    "admitted_to": "INSERT INTO admitted_to VALUES (patient_id, carecenter_id, date)",
+    "appointments": "INSERT INTO appointments VALUES (date, doctor_id, patient_id, carecenter_id)",
+    "carecenter": "INSERT INTO carecenter VALUES (name, address)",
+    "doctors": "INSERT INTO doctors VALUES(name, works_at)",
+    "nurses": "INSERT INTO nurses VALUES (name, works_at)",
+    "patients": "INSERT INTO patients VALUES (name, birthdate)",
+    "studies": "INSERT INTO studies VALUES (doctor_id, patient_id)"
+  }
+}
